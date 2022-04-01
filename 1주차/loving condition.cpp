@@ -25,6 +25,7 @@ enum mbti{
 int loving_mbti;
 
 void final_selection(int loving){
+    std::cout<<"MBTI you chose is ";
     switch (loving)
     {
         case ENFP:
