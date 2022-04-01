@@ -96,4 +96,6 @@ while(
 );
 
 final_selection(loving_mbti);
+
+return 0;
 }
