@@ -21,24 +21,31 @@ int main(){
     
     cout<<'\n'<<endl;
     for (int u = 0; u<9;u++){cout<<*(norm+u)<<' ';} //정규화된 배열값
+
+    float* m = normalization(xset,n,mean(x,9),stdev(x,9,mean(x,9)));
+    cout<<'\n'<<endl;
+    for (int g = 0; g<9;g++){cout<<*(m+u)<<' ';}
 }
 
-
-// 이하는 안 돌아가는 함수...
-float* normalization_std(float x[]){
-    float *ptr;
-    float norm_x[n];
-    ptr = x;
+float mean(float x[],int len){
     float avg;
+    float *ptr = x; // array의 첫번째 주소를 *ptr에 넣고 선언
+    for(int i=0; i<len; i++) { avg+=ptr[i];} // data sum
+    avg = avg/len; //평균
+
+    return avg;
+}
+
+float stdev(float x[],int len, float avg){
     float std;
+    float *ptr = x;
+    for(int j=0; j<len; j++) { std += pow((ptr[j]-avg),2.0);} // 제곱합 
+    std = std/(len-1);
+    return sqrt(std);
+}
 
-    for(int i=0; i<n; i++) { avg+=ptr[i]; }
-    avg = avg/n;
-    for(int j=0; j<n; j++) {std += pow((ptr[j]]-avg),2.0);}
-    std = std/(n-1);
-    
-    for(int k=0; k<n;k++){norm_x[k] = (*(x+k)-avg)/std;}
-
-    return norm_x;
+float * normalization(float x[],int len,float avg, float std){
+    for(int k=0; k<len;k++){x[k] = (x[k]-avg)/sqrt(std);}
+    return x;
 }
 
