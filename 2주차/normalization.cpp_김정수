@@ -1,0 +1,27 @@
+#include <iostream>
+#include <array>
+#include <math.h>
+using namespace std;
+#define max_length 100
+
+
+int main(){
+    float xset[] = {12321.2, 13433.4, 22348.3, -12353.0, 48938.7,-10890.2,19343.7, 13892.4,15747.4,};
+    int n = 9;
+    float avg;
+    float std;
+    float *ptr = xset;
+    for(int i=0; i<n; i++) { avg+=ptr[i];
+    cout<<avg<<' ';}
+    avg = avg/n;
+    for(int j=0; j<n; j++) { std += pow((ptr[j]-avg),2.0);
+        cout<<std<<' ';
+    }
+    std = std/(n-1);
+    
+    float norm[9];
+    for(int k=0; k<n;k++){norm[k] = (*(xset+k)-avg)/sqrt(std);}
+    
+    cout<<'\n'<<endl;
+    for (int u = 0; u<9;u++){cout<<*(norm+u)<<' ';}
+}
