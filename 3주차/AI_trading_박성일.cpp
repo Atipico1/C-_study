@@ -9,6 +9,7 @@ void init();
 void inputKospi(int, int*);
 int meanKospi(int, int*);
 void result(double, int, int);
+void inputProfit(int&, int&);
 
 int main(){
 	
@@ -26,17 +27,15 @@ int main(){
 	int* ptr = new int[n];
 	
 	// array에 kospi index 입력 하는 function call 
-	 
 	inputKospi(n, ptr);
+	
+	// kospi index mean return하는 function call
 	mean = meanKospi(n, ptr);
 	
-	// 사용자로부터 kospi index와 목표 수익률을 입력받 
-	cout << "오늘의 코스피 지수를 입력하세요 : ";
-	cin >> todayKospi;
-	cout << "목표 수익률(%)을 입력하세요 : ";
-	cin >> profit;
+	// 사용자로부터 kospi index와 목표 수익률을 입력받기 (call by reference)
+	inputProfit(todayKospi, profit);
 	
-	// 입력받은 kospi index와 목표 수익률로 투자 여부 결 
+	// 입력받은 kospi index와 목표 수익률로 투자 여부 결정 
 	result(mean, todayKospi, profit);
 	
 	// 다시 시작 여부 결정, 사용자가 Y를 입력하면 startpoint로 goto
@@ -64,7 +63,6 @@ void init(){
 	cout << '\n';
 }
 
-
 // for loop으로 array에 kospi index assign 
 void inputKospi(int n, int* ptr){
 	
@@ -84,11 +82,20 @@ int meanKospi(int n, int* ptr){
 	}
 	return sum/i;
 }
+
+void inputProfit(int &today, int &profit){
+	
+	cout << "오늘의 코스피 지수를 입력하세요 : ";
+	cin >> today;
+	cout << "목표 수익률(%)을 입력하세요 : ";
+	cin >> profit;
+}
+
 // mean, today kospi index, 목표 수익률을 input으로 투자 여부 print 
 void result(double mean, int todayKospi, int profit){
 	
 	double expectedKospi = mean*(100+profit)*0.01;
-	 
+
 	if (todayKospi > expectedKospi)
 		cout << "예상 코스피지수가 " << (todayKospi-expectedKospi) << "p 높습니다 투자를 미루시길 권해드립니다" << endl;
 	else cout << "예상 코스피지수보다 " << (expectedKospi-todayKospi) << "p 낮습니다 풀매수 타이밍입니다" << endl;
