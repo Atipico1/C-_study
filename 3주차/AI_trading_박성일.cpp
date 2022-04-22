@@ -39,6 +39,7 @@ int main(){
 	result(mean, todayKospi, profit);
 	
 	// 다시 시작 여부 결정, 사용자가 Y를 입력하면 startpoint로 goto
+	delete[] ptr;
 	char k;
 	cout << "다시 시작하시려면 Y, 끝내려면 N을 입력하세요 : ";
 	cin >> k;
@@ -46,7 +47,6 @@ int main(){
 		cout << "\n\n";
 		goto startpoint;
 	}
-	delete[] ptr;
 	return 0;
 }
 
