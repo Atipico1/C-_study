@@ -105,3 +105,6 @@ int BinaryHeap::pop(){
 
 	return result;
 }
+
+///참고1. https://algorithmtutor.com/Data-Structures/Tree/Binary-Heaps/ 
+///참고2. https://twpower.github.io/137-heap-implementation-in-cpp/
