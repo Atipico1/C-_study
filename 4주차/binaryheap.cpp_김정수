@@ -100,23 +100,8 @@ int BinaryHeap::pop(){
 	// 첫번째 원소를 힙의 가장 끝에 원소와 바꾸고 가장 끝은 이제 쓰지 않을 예정이니 size를 내려준다.
 	swap(&heap[1], &heap[size]);
 	size--;
-
-	// 아래의 과정은 child를 parent와 비교하면서 알맞은 위치로 하나씩 내리는 부분
-	int parent = 1;
-	int child = parent * 2;
-	if (child + 1 <= size) {
-		child = (heap[child] > heap[child + 1]) ? child : child + 1;
-	}
-
-	while (child <= size && heap[parent] < heap[child]) {
-		BinaryHeap::swap(&heap[parent], &heap[child]);
-
-		parent = child;
-		child = child * 2;
-		if (child + 1 <= size) {
-			child = (heap[child] > heap[child + 1]) ? child : child + 1;
-		}
-	}
+	
+	BinaryHeap::maxHeapify(1);
 
 	return result;
 }
