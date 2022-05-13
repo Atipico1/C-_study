@@ -1,5 +1,5 @@
-/*Tree.h¿¡¼­ Á¤ÀÇÇÑ Tree class·Î Tree instance¸¦ ¸¸µé¾îº¸´Â cppÆÄÀÏ. 
-Tree´Â Æ¯º°ÇÑ Á¶°Ç ¾øÀÌ ÀÔ·ÂµÈ ¼ø¼­´ë·Î ¸¸µé¾îÁø´Ù.*/
+/*Tree.hì—ì„œ ì •ì˜í•œ Tree classë¡œ Tree instanceë¥¼ ë§Œë“¤ì–´ë³´ëŠ” cppíŒŒì¼. 
+TreeëŠ” íŠ¹ë³„í•œ ì¡°ê±´ ì—†ì´ ì…ë ¥ëœ ìˆœì„œëŒ€ë¡œ ë§Œë“¤ì–´ì§„ë‹¤.*/
 #include "Tree.h"
 #include <vector>
 #include <queue>
@@ -8,22 +8,22 @@ Tree´Â Æ¯º°ÇÑ Á¶°Ç ¾øÀÌ ÀÔ·ÂµÈ ¼ø¼­´ë·Î ¸¸µé¾îÁø´Ù.*/
 using namespace std;
 
 int main(void){
-    vector<int> input_vector = {1,2,3,4,5,6,7,8}; //tree·Î ¸¸µé node_val  //ÇØ´ç °ªÀ» inputÀ¸·Î ¹ŞÀ» ¼ø ¾øÀ»±î?
-    queue<Tree*> tree_element; //ÀÛ¾÷¿ë: ÀÔ·Â ¼ø¼­´ë·Î ÀÛ¾÷ÇÏ±â À§ÇÑ queue
-    queue<int> element_que; //ÀúÀå¿ë: node_valÀ» ´ãÀ» queue
+    vector<int> input_vector = {1,2,3,4,5,6,7,8}; //treeë¡œ ë§Œë“¤ node_val  //í•´ë‹¹ ê°’ì„ inputìœ¼ë¡œ ë°›ì„ ìˆœ ì—†ì„ê¹Œ?
+    queue<Tree*> tree_element; //ì‘ì—…ìš©: ì…ë ¥ ìˆœì„œëŒ€ë¡œ ì‘ì—…í•˜ê¸° ìœ„í•œ queue
+    queue<int> element_que; //ì €ì¥ìš©: node_valì„ ë‹´ì„ queue
 
     Tree* tree = new Tree(); // Tree instance
     cout << "Initial tree node_val: " << tree->node_val <<endl;
 
     for (auto n: input_vector)
-        element_que.emplace(n); //queue.emplace : push¿Í °á°ú°¡ µ¿ÀÏ
+        element_que.emplace(n); //queue.emplace : pushì™€ ê²°ê³¼ê°€ ë™ì¼
 
     tree_element.emplace(tree);
 
-    while (!tree_element.empty()) {  //input_order¿¡ ³²Àº node°¡ ¾øÀ» ¶§±îÁö
+    while (!tree_element.empty()) {  //input_orderì— ë‚¨ì€ nodeê°€ ì—†ì„ ë•Œê¹Œì§€
         //current node
         Tree* curNode = tree_element.front();
-        tree_element.pop(); //C++ÀÇ popÀº °ªÀ» ¹İÈ¯ÇÏÁö ¾Ê°í »èÁ¦¸¸ ÇÑ´Ù.
+        tree_element.pop(); //C++ì˜ popì€ ê°’ì„ ë°˜í™˜í•˜ì§€ ì•Šê³  ì‚­ì œë§Œ í•œë‹¤.
         
         int left, right;
 
