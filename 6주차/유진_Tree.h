@@ -1,5 +1,5 @@
-/* Tree¸¦ Á¤ÀÇÇÏ´Â Çì´õÆÄÀÏ. Tree´Â ÇØ´ç ³ëµåÀÇ °ª°ú left/right node·ÎÀÇ Æ÷ÀÎÅÍ¸¦ °®°í ÀÖ´Ù.
-´ÙÀ½ ºí·Î±×ÀÇ ÄÚµå´ë·Î ÀÛ¼ºµÊ. <https://hwan-shell.tistory.com/262> */
+/* Treeë¥¼ ì •ì˜í•˜ëŠ” í—¤ë”íŒŒì¼. TreeëŠ” í•´ë‹¹ ë…¸ë“œì˜ ê°’ê³¼ left/right nodeë¡œì˜ í¬ì¸í„°ë¥¼ ê°–ê³  ìžˆë‹¤.
+ë‹¤ìŒ ë¸”ë¡œê·¸ì˜ ì½”ë“œëŒ€ë¡œ ìž‘ì„±ë¨. <https://hwan-shell.tistory.com/262> */
 using namespace std;
 
 class Tree{
