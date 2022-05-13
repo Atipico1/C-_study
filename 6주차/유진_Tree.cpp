@@ -1,4 +1,4 @@
-/*Tree class¸¦ Á¤ÀÇÇÏ´Â cppÆÄÀÏ*/
+/*Tree classÂ¸Â¦ ÃÂ¤Ã€Ã‡Ã‡ÃÂ´Ã‚ cppÃ†Ã„Ã€Ã*/
 #include "Tree.h"
 #include <queue>
 
